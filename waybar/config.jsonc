@@ -1,0 +1,87 @@
+// -*- mode: jsonc -*-
+{
+    // "layer": "top", // Waybar at top layer
+    // "position": "bottom", // Waybar position (top|bottom|left|right)
+    "height": 14, // Waybar height (to be removed for auto height)
+    // "width": 1280, // Waybar width
+    "spacing": 10, // Gaps between modules (4px)
+    // Choose the order of the modules
+    "margin-top": 10,
+    "margin-left": 20,
+    "margin-right": 20,
+    "modules-left": [
+        "hyprland/workspaces",
+        "mpris"
+    ],
+    "modules-center": [
+        "hyprland/window"
+    ],
+    "modules-right": [
+        "network",
+        "pulseaudio",
+        "clock"
+    ],
+    "mpris": {
+        "format": "{player_icon}  {title} · {artist}",
+        "title-len": 30,
+        "artist-len": 30,
+        "format-paused": "{status_icon}  {title} · {artist} · {position} / {length}",
+        "tooltip-format-playing": "{position} / {length}",
+        "player-icons": {
+            "default": " "
+        },
+        "status-icons": {
+            "paused": " "
+        }
+        //"interval": 1
+    },
+    "clock": {
+        "timezone": "Europe/Berlin",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "format-alt": "{%d.%m.%Y}"
+    },
+    "network": {
+        // "interface": "wlp2*", // (Optional) To force the use of this interface
+        "format-wifi": "{icon}    {essid} · {signalStrength}%",
+        "format-ethernet": "󱎔    Connected",
+        "on-click-right": "foot -e nmtui",
+        "tooltip-format": "{ifname} via {gwaddr}",
+        "format-disabled": "󰤮    Disabled",
+        "format-icons": [
+            "󰤯 ", "󰤟 ", "󰤢 ", "󰤥 ", "󰤨 "
+        ],
+        "format-linked": "󰤮    Connected without internet",
+        "format-disconnected": "󰤮    Disconnected",
+        "format-alt": "{ifname}: {ipaddr}/{cidr}"
+    },
+    "pulseaudio": {
+        "scroll-step": 5, // %, can be a float
+        "format": "{icon} · {volume}%",
+        "format-bluetooth": "  ·  {icon}  {volume}%",
+        "format-bluetooth-muted": "  ·  {icon}    ",
+        "format-muted": " ",
+        "format-icons": {
+            "default": "  ",
+            "headphone": " ",
+            "hands-free": "",
+            "headset": " ",
+            "phone": "",
+            "portable": "",
+            "car": ""
+        },
+        "on-click": "pavucontrol",
+        "on-click-right": "blueman-manager",
+        "on-click-middle": "pactl set-sink-mute @DEFAULT_SINK@ toggle"
+    },
+    "hyprland/workspaces": {
+        "on-scroll-up": "hyprctl dispatch workspace r-1",
+        "on-scroll-down": "hyprctl dispatch workspace r+1",
+        "on-click": "activate",
+        "active-only": false,
+        "all-outputs": true,
+        "format": "{}",
+        "persistent-workspaces": {
+            "*": 5
+        }
+    }
+}

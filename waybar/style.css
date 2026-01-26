@@ -1,0 +1,87 @@
+@define-color primary #ff4432;
+@define-color secondary #ff7200;
+@define-color onbackground #ffaa00;
+@define-color onbackground2 #ffd400;
+@define-color container #ffc700;
+@define-color oncontainer #000000;
+@define-color connected #ffc700; /* #90e55b */
+@define-color connectedfont #ffc700;
+* {
+    /* `otf-font-awesome` is required to be installed for icons */
+    font-family: "0xProto", Roboto, Helvetica, Arial, sans-serif;
+    font-size: 12px;
+}
+window#waybar {
+    background-color: transparent;
+}
+/* Workspaces */
+#workspaces {
+    border: 2px @primary solid;
+    border-radius: 100px;
+    padding: 3px 3px 3px 1px;
+    font-weight: 900;
+}
+#workspaces button {
+    color: @onbackground;
+    padding: 0 1px;
+    margin: 0 2px;
+    background-color: transparent;
+    min-height: 0;
+    border-radius: 15px;
+    transition: all 0.3s ease-in-out;
+}
+
+#workspaces button.active {
+    color: @oncontainer;
+    background-color: @container;
+    min-width: 40px;
+    margin-right: 1px; /*IDK why, it fixes width animation */
+}
+
+/* Window */
+#window {
+    padding: 4px 15px;
+    background: transparent;
+    color: @onbackground;
+    border-radius: 100px;
+    transition: all 0.3s ease-in-out;
+    font-weight: bold;
+}
+#mpris {
+    color: @onbackground2;
+    border: 2px @secondary dashed;
+    padding: 4px 15px;
+    border-radius: 100px;
+}
+#mpris.playing {
+    border: 2px @secondary solid;
+}
+#clock {
+    padding: 4px 15px;
+    border: 2px @primary solid;
+    border-radius: 100px;
+    color: @onbackground;
+    font-weight: bold;
+}
+#network {
+    padding: 4px 15px;
+    border-radius: 100px;
+}
+#network.wifi, #network.ethernet {
+    border: 2px @connected solid;
+    color: @connectedfont;
+}
+#network.disconnected, #network.linked {
+    border: 2px @primary solid;
+    color: @onbackground;
+}
+#network.disabled {
+    border: 2px @secondary dashed;
+    color: @onbackground2;
+}
+#pulseaudio {
+    border: 2px @secondary solid;
+    color: @onbackground2;
+    padding: 4px 15px;
+    border-radius: 100px;
+}

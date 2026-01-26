@@ -1,0 +1,19 @@
+/* ROUNDED THEME FOR ROFI */
+/* Author: Newman Sanchez (https://github.com/newmanls) */
+
+* {
+    bg0:    #1d1009aa; // background
+    bg1:    #000000FF; // search bar backg && selected item font color
+    bg2:    #FFFF00; // -
+    bg3:    #ff4432; // Searchbar outline and selected item bg
+    fg0:    #ffaa00; // Unselected item font and search color
+    fg1:    #FFFF00; // -
+    fg2:    #888888; // drun color
+    fg3:    #ff7200; // Searchbar text placeholder
+}
+
+@import "~/.config/rofi/template.rasi"
+
+element selected {
+    text-color: @bg1;
+}

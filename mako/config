@@ -1,0 +1,12 @@
+background-color=#222222aa
+anchor=top-right
+border-color=#ff4432ee
+border-radius=8
+max-icon-size=64
+icons=1
+padding=0,15,25
+sort=-time
+margin=25
+layer=overlay
+default-timeout=5000
+ignore-timeout=1
