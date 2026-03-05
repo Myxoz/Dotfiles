@@ -8,6 +8,13 @@ vim.api.nvim_create_autocmd('LspAttach', {
         local opts = { buffer = bufnr }
         vim.bo[bufnr].omnifunc = "v:lua.vim.lsp.omnifunc"
         vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts)
+		vim.keymap.set("n", "<leader>fm", function()
+			if vim.bo.filetype == "json" then
+				vim.cmd("%!jq .")
+			else
+				vim.lsp.buf.format()
+			end
+		end, { desc = "Format file" })
         vim.keymap.set("n", "<leader>j", vim.lsp.buf.code_action, opts)
         vim.keymap.set("n", "<leader>a", vim.lsp.buf.hover, opts)
         vim.keymap.set("n", "<leader>f", vim.lsp.buf.definition, opts)

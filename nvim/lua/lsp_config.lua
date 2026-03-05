@@ -78,9 +78,11 @@ cmp.setup({
     }
 })
 
--- Optional: enable inline LSP hints (Neovim 0.9+)
 if vim.lsp.buf.inlay_hint and type(vim.lsp.buf.inlay_hint) == "function" then
     vim.lsp.buf.inlay_hint(0, true)
 end
 vim.diagnostic.config({ virtual_text = true })
+
+vim.keymap.set("n", "<leader>e", vim.diagnostic.setloclist, { desc = "LSP diagnostics (buffer)" })
+
 vim.opt.signcolumn = "yes" -- Left padding even if no errors

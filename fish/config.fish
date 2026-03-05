@@ -9,6 +9,9 @@ alias ssh="TERM=xterm command ssh"
 alias sync_life="scp ~/code/php/life_api/_api.php myxoz:~/myxoz.de/life/_api.php"
 alias countcodelines="find . -type f -name '*.kt' -print0 | xargs -0 cat | wc -l"
 alias resyncbank="cd ~/code/nodejs/banking && node index.js"
+alias adb="/home/blaze/Android/Sdk/platform-tools/adb"
+alias apktool="java -jar ~/Pownloads/apktool.jar"
+alias apksigner="/home/blaze/Android/Sdk/build-tools/36.1.0/apksigner"
         
 function sshcat
     if test (count $argv) -ne 1

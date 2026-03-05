@@ -45,9 +45,28 @@ vim.lsp.config["html"] = {
     root_markers = { ".git", "composer.json", "package.json" },
 }
 vim.lsp.enable("html")
+
 vim.lsp.config["cssls"] = {
     cmd = { "vscode-css-language-server", "--stdio" },
     filetypes = { "css", "scss", "less" },
     root_markers = { ".git", "composer.json", "package.json" },
 }
 vim.lsp.enable("cssls")
+
+-- Python
+vim.lsp.config["pyright"] = {
+    cmd = { "pyright-langserver", "--stdio" },
+    filetypes = { "python" },
+    root_markers = { "pyproject.toml", "setup.py", "requirements.txt", ".git" },
+    settings = {
+        python = {
+            analysis = {
+                typeCheckingMode = "basic",  -- options: off, basic, strict
+                autoSearchPaths = true,
+                useLibraryCodeForTypes = true,
+            },
+        },
+    },
+}
+
+vim.lsp.enable("pyright")
