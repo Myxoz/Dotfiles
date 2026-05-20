@@ -12,7 +12,9 @@ alias resyncbank="cd ~/code/nodejs/banking && node index.js"
 alias adb="/home/blaze/Android/Sdk/platform-tools/adb"
 alias apktool="java -jar ~/Pownloads/apktool.jar"
 alias apksigner="/home/blaze/Android/Sdk/build-tools/36.1.0/apksigner"
-        
+alias poffy="resyncbank && poweroff"
+alias screen_recorder="wf-recorder --muxer=v4l2 --codec=rawvideo -x yuyv422 --file=/dev/video11"
+alias mount_conventiq="sudo mount -t davfs https://cloud.conventiq.de/remote.php/dav/files/Laurin/ /remote/conventiq --mkdir"
 function sshcat
     if test (count $argv) -ne 1
         echo "Usage: sshcat user@host:/path/to/file"
@@ -51,9 +53,7 @@ function sshvim
 
     scp $remote $tmpfile
     nvim $tmpfile
-    scp $tmpfile $remote
-
-    rm $tmpfile
+    scp $tmpfile $remote && rm $tmpfile
 end
 
 function runsudo --description 'Run last command using sudo'

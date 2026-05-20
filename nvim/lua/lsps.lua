@@ -70,3 +70,22 @@ vim.lsp.config["pyright"] = {
 }
 
 vim.lsp.enable("pyright")
+
+-- TYPST
+vim.lsp.config["tinymist"] = {
+    cmd = { "tinymist" },
+    filetypes = { "typst" },
+    root_markers = { ".git" },
+    settings = {},
+}
+
+vim.lsp.enable("tinymist")
+
+vim.lsp.config["lua-language-server"] = {
+    cmd = { "lua-language-server" },
+    root_markers = { ".luarc.json" },
+    filetypes = { "lua" },
+    settings = {},
+}
+
+vim.lsp.enable("lua-language-server")

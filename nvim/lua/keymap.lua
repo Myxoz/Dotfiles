@@ -23,3 +23,24 @@ vim.api.nvim_create_autocmd('LspAttach', {
         vim.keymap.set("n", "F", vim.lsp.buf.format, opts)
     end,
 })
+
+vim.api.nvim_create_user_command(
+	'Gq',
+	function() 
+		vim.cmd.wall()
+		vim.cmd("!git quick")
+	end,
+	{ nargs = 0 }
+)
+
+vim.api.nvim_create_user_command('Autosave',
+	function()
+		vim.api.nvim_create_autocmd({ "TextChanged", "TextChangedI" }, {
+			group = group_id,
+			pattern = "*",
+			command = "silent! update",
+		})
+		print("Autosave: ON")
+	end,
+	{nargs = 0}
+)

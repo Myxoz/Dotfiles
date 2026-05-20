@@ -56,10 +56,10 @@
     },
     "pulseaudio": {
         "scroll-step": 5, // %, can be a float
-        "format": "{icon} · {volume}%",
-        "format-bluetooth": "  ·  {icon}  {volume}%",
-        "format-bluetooth-muted": "  ·  {icon}    ",
-        "format-muted": " ",
+        "format": "{format_source}{icon} · {volume}%",
+        "format-bluetooth": "{format_source}  ·  {icon}  {volume}%",
+        "format-bluetooth-muted": "{format_source}  ·  {icon}   ",
+        "format-muted": "{format_source} {format-source}",
         "format-icons": {
             "default": "  ",
             "headphone": " ",
@@ -69,6 +69,8 @@
             "portable": "",
             "car": ""
         },
+		"format-source": "",
+		"format-source-muted": "   ·  ",
         "on-click": "pavucontrol",
         "on-click-right": "blueman-manager",
         "on-click-middle": "pactl set-sink-mute @DEFAULT_SINK@ toggle"

@@ -23,7 +23,7 @@ window#waybar {
 }
 #workspaces button {
     color: @onbackground;
-    padding: 0 1px;
+    padding: 4 1px 0 1px;
     margin: 0 2px;
     background-color: transparent;
     min-height: 0;
@@ -57,14 +57,14 @@ window#waybar {
     border: 2px @secondary solid;
 }
 #clock {
-    padding: 4px 15px;
+    padding: 6px 15px 2px 15px;
     border: 2px @primary solid;
     border-radius: 100px;
     color: @onbackground;
     font-weight: bold;
 }
 #network {
-    padding: 4px 15px;
+    padding: 4px 15px 2px 15px;
     border-radius: 100px;
 }
 #network.wifi, #network.ethernet {
@@ -82,6 +82,6 @@ window#waybar {
 #pulseaudio {
     border: 2px @secondary solid;
     color: @onbackground2;
-    padding: 4px 15px;
+    padding: 4px 15px 2px 15px;
     border-radius: 100px;
 }
