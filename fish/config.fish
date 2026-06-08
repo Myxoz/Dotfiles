@@ -1,6 +1,4 @@
-if status is-interactive
-    # Commands to run in interactive sessions can go here
-end
+set -gx EDITOR nvim
 alias nano=nvim
 alias rtw="sudo efibootmgr --bootnext 0000 && sudo reboot"
 alias mount_old="sudo mount /dev/nvme0n1p6 /old --mkdir"
@@ -62,6 +60,5 @@ function runsudo --description 'Run last command using sudo'
 end
 
 source "$HOME/.cargo/env.fish" 
-
 starship init fish | source
 zoxide init fish | source

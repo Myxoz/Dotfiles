@@ -200,3 +200,6 @@ symbol = " "
 
 [zig]
 symbol = " "
+
+[git_metrics]
+disabled = false

@@ -17,6 +17,7 @@
         "hyprland/window"
     ],
     "modules-right": [
+        "tray", // Added here to receive KeePassXC
         "network",
         "pulseaudio",
         "clock"
@@ -34,6 +35,10 @@
             "paused": " "
         }
         //"interval": 1
+    },
+    "tray": {
+        "icon-size": 1, // Shrink icons to minimum size
+        "spacing": 0
     },
     "clock": {
         "timezone": "Europe/Berlin",
@@ -76,12 +81,9 @@
         "on-click-middle": "pactl set-sink-mute @DEFAULT_SINK@ toggle"
     },
     "hyprland/workspaces": {
-        "on-scroll-up": "hyprctl dispatch workspace r-1",
-        "on-scroll-down": "hyprctl dispatch workspace r+1",
-        "on-click": "activate",
+		"format": "{}",
         "active-only": false,
         "all-outputs": true,
-        "format": "{}",
         "persistent-workspaces": {
             "*": 5
         }

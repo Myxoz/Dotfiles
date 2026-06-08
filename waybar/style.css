@@ -85,3 +85,6 @@ window#waybar {
     padding: 4px 15px 2px 15px;
     border-radius: 100px;
 }
+#tray {
+	opacity: 0;
+}
